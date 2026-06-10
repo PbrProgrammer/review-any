@@ -20,7 +20,7 @@ public class ReviewController {
 
     // ۱. ثبت ریویوی جدید (نیاز به توکن JWT در هدر درخواست دارد)
     @PostMapping
-    public ResponseEntity<Review> createReview(@RequestBody ReviewRequest request) {
+    public ResponseEntity<ReviewDto> createReview(@RequestBody ReviewRequest request) {
         return ResponseEntity.ok(reviewService.createReview(request));
     }
 

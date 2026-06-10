@@ -29,7 +29,7 @@ public class CategoryService {
 
     public Page<CategoryDto> getCategory(int page, int size) {
         return categoryRepository.findAll(
-                PageRequest.of(page, size, Sort.by("createdAt").descending())).map(CategoryMapper::toDto);
+                PageRequest.of(page, size, Sort.by("id").descending())).map(CategoryMapper::toDto);
     }
 
 }

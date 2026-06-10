@@ -13,9 +13,9 @@ public class ReviewDto {
 
     private Long id;
 
-    private User user;
+    private String user;
 
-    private Item item;
+    private Long itemId;
 
     private Integer rating;
 
@@ -23,5 +23,5 @@ public class ReviewDto {
 
     private LocalDateTime createdAt;
 
-    private List<Images> images;
+    private List<String> imagesUrl;
 }

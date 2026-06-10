@@ -30,7 +30,7 @@ public class ReviewService {
         this.userRepository = ur;
     }
 
-    public Review createReview(ReviewRequest request) {
+    public ReviewDto createReview(ReviewRequest request) {
         String username = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("کاربر پیدا نشد"));
@@ -45,7 +45,8 @@ public class ReviewService {
         review.setContent(request.getContent());
         review.setCreatedAt(LocalDateTime.now());
 
-        return reviewRepository.save(review);
+        Review save = reviewRepository.save(review);
+        return ReviewMapper.toDto(save);
     }
 
     public Page<ReviewDto> getReviewsByItem(Long itemId, int page, int size) {
