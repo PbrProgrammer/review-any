@@ -2,7 +2,7 @@ package org.alima.model;
 
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "images")
@@ -14,7 +14,7 @@ public class Images {
 
     private String imageUrl; // ذخیره آدرس فایل در MinIO/S3
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "review_id")
     private Review review;
 

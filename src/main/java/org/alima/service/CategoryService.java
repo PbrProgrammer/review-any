@@ -3,13 +3,9 @@ package org.alima.service;
 
 import lombok.RequiredArgsConstructor;
 import org.alima.dto.CategoryDto;
-import org.alima.dto.ItemDto;
 import org.alima.mapper.CategoryMapper;
-import org.alima.mapper.ItemMapper;
 import org.alima.model.Category;
 import org.alima.repository.CategoryRepository;
-import org.alima.repository.ItemRepository;
-import org.alima.repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;

@@ -1,4 +1,4 @@
-package org.alima.repository;
+package org.alima.security;
 
 
 import org.alima.model.User;

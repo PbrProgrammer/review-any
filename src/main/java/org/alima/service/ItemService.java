@@ -5,20 +5,12 @@ import lombok.RequiredArgsConstructor;
 import org.alima.dto.CategoryDto;
 import org.alima.dto.ItemDto;
 import org.alima.mapper.ItemMapper;
-import org.alima.model.Category;
-import org.alima.model.Item;
-import org.alima.model.User;
 import org.alima.repository.ItemRepository;
-import org.alima.repository.UserRepository;
+import org.alima.security.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

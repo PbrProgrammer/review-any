@@ -1,6 +1,7 @@
 package org.alima.controller;
 
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.alima.dto.ReviewDto;
 import org.alima.dto.ReviewRequest;
 import org.alima.model.Review;
@@ -18,13 +19,12 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
-    // ۱. ثبت ریویوی جدید (نیاز به توکن JWT در هدر درخواست دارد)
+    @SecurityRequirement(name = "BearerAuth")
     @PostMapping
     public ResponseEntity<ReviewDto> createReview(@RequestBody ReviewRequest request) {
         return ResponseEntity.ok(reviewService.createReview(request));
     }
 
-    // ۲. نمایش لیست ریویوهای یک محصول (دسترسی بدون توکن و عمومی)
     @GetMapping("/item/{itemId}")
     public ResponseEntity<Page<ReviewDto>> getReviews(
             @PathVariable Long itemId,
